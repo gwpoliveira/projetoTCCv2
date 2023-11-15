@@ -1,13 +1,9 @@
 from django.db import models
-from models import Periodo
+from periodo.models import Periodo
 
-# Create your models here.
-# Tela Disciplina: período, curso e disciplina
-
-class Disciplina():
-    periodo = models.ForeignKey('Periodo:', max_length=10, blank=False)
+class Disciplina(models.Model):
+    periodo = models.ForeignKey(Periodo, verbose_name='Periodo', on_delete=models.CASCADE)
     disciplina = models.CharField('Disciplina', max_length=200, blank=False)
     
     def __str__(self):
-        return self.periodo+ ' '+self.disciplina
-    
+        return f'{self.periodo} {self.disciplina}'
