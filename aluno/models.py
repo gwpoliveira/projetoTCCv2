@@ -1,5 +1,6 @@
 from django.db import models
-from models import Curso,Disciplina,Professor
+from curso.models import Curso
+from disciplina.models import Disciplina
 
 
 # Tela Aluno: poderá cadastrar: matriculaAluno, nomeAluno:, emailAluno:, 
