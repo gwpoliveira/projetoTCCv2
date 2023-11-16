@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'curso',
     'disciplina',
     'tcc',
+    'bootstrap5',
 ]
 
 MIDDLEWARE = [
