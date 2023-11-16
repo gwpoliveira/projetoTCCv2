@@ -37,7 +37,7 @@ class DisciplinaCreateView(CreateView):
         messages.add_message(self.request, messages.SUCCESS, "Disciplina cadastrato com sucesso!")
         return reverse('listar-disciplina')
 
-class CursoUpdateView(UpdateView):
+class DisciplinaUpdateView(UpdateView):
     model = Disciplina
     template_name = 'disciplina/atualizar.html'
     form_class = DisciplinaForm
