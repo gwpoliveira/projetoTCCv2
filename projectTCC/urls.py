@@ -6,12 +6,12 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', HomeTemplateView.as_view(), name='home'),
-    path('aluno', include('aluno.urls')),
-    path('curso', include('curso.urls')),
-    path('disciplina', include('disciplina.urls')),
-    path('periodo', include('periodo.urls')),
-    path('professor', include('professor.urls')),
-    path('tcc', include('tcc.urls')),
+    path('aluno/', include('aluno.urls')),
+    path('curso/', include('curso.urls')),
+    path('disciplina/', include('disciplina.urls')),
+    path('periodo/', include('periodo.urls')),
+    path('professor/', include('professor.urls')),
+    path('tcc/', include('tcc.urls')),
     path('admin/', admin.site.urls),
     
 ]+ static (settings.STATIC_URL, document_root=settings.STATIC_ROOT)
