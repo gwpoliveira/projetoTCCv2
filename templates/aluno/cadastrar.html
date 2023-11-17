@@ -1,7 +1,16 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Pagina Inicial do Site{% endblock %}
-{% block content %}
+{% block title %}Projeto TCC Listar Aluno {% endblock %}
+{% block conteudo %}
+{% load bootstrap5 %}
+{% bootstrap_messages %}
 
+<h2><span class="badge bg-primary mb-1">Cadastrar Aluno</span></h2>
 
-{% endblock %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <button class="btn btn-primary" type="submit">Cadastrar</button>
+</form>
+
+{% endblock conteudo %}

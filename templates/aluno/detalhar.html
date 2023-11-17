@@ -1,7 +1,22 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Pagina Inicial do Site{% endblock %}
-{% block content %}
+{% block title %}Projeto TCC Listar Aluno {% endblock %}
+{% block conteudo %}
+{% load bootstrap5 %}
 
 
-{% endblock %}
+<h2><span class="badge bg-primary mb-1">Detalhar Aluno</span></h2>
+
+{% if aluno.avatar %}
+<img src="{{ aluno.avatar.url }}" alt="" width="100">
+{% else %}
+<img src="https://cdn.pixabay.com/photo/2016/09/01/08/24/smiley-1635449_1280.png" alt="" width="100">
+{% endif %}
+<h1>Matricula: {{ aluno.matriculaAluno }}</h1>
+<h1>Aluno: {{ aluno.nomeAluno }}</h1>
+
+<a class="btn btn-primary" href="{% url 'atualizar-aluno' aluno.id %}">Atualizar aluno</a>
+<a class="btn btn-danger" href="{% url 'deletar-aluno' aluno.id %}">Apagar aluno</a>
+
+{% endblock conteudo %}
+
