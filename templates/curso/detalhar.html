@@ -1,7 +1,17 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Pagina Inicial do Site{% endblock %}
-{% block content %}
+{% block title %}Detalhar Curso {% endblock %}
+{% block conteudo %}
+{% load bootstrap5 %}
 
 
-{% endblock %}
+<h2><span class="badge bg-primary mb-1">Detalhar Curso</span></h2>
+
+<h1>Nome do Curso: {{ curso.curso}}</h1>
+
+
+<a class="btn btn-primary" href="{% url 'atualizar-curso' curso.id %}">Atualizar Curso</a>
+<a class="btn btn-danger" href="{% url 'deletar-curso' curso.id %}">Apagar Curso</a>
+
+{% endblock conteudo %}
+

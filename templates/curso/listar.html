@@ -1,7 +1,21 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Pagina Inicial do Site{% endblock %}
-{% block content %}
+{% block title %}Listar Curso {% endblock %}
+{% block conteudo %}
+{% load bootstrap5 %}
+{% bootstrap_messages %}
 
+<h2><span class="badge bg-primary mb-1">Listar Curso</span></h2>
 
-{% endblock %}
+<ul class="list-group list-group-flush">
+    {% for curso in cursos %}
+    <li class="list-group-item">
+      <a href="{% url 'detalhar-curso' curso.id %}">{{curso.id}} {{curso.curso}}</a></li>
+    {% endfor %}
+  </ul>
+
+  {% if perms.curso.add_curso %}
+  <a class="btn btn-primary" href="{% url 'cadastrar-curso' %}" role="button">Cadastrar Curso</a>
+  {% endif %}
+
+{% endblock conteudo %}

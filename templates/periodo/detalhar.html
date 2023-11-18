@@ -1,7 +1,17 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Pagina Inicial do Site{% endblock %}
-{% block content %}
+{% block title %} Detalhar Periodo {% endblock %}
+{% block conteudo %}
+{% load bootstrap5 %}
 
 
-{% endblock %}
+<h2><span class="badge bg-primary mb-1">Detalhar Periodo</span></h2>
+
+<h1>Periodo: {{ periodo.periodo }}</h1>
+
+
+<a class="btn btn-primary" href="{% url 'atualizar-periodo' periodo.id %}">Atualizar Periodo</a>
+<a class="btn btn-danger" href="{% url 'deletar-periodo' periodo.id %}">Apagar Periodo</a>
+
+{% endblock conteudo %}
+

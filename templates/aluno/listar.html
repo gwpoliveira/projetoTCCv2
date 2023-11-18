@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Projeto TCC Listar Aluno {% endblock %}
+{% block title %}Listar Aluno {% endblock %}
 {% block conteudo %}
 {% load bootstrap5 %}
 {% bootstrap_messages %}
 
-<h2><span class="badge bg-primary mb-1">Listar Aluno</span></h2>
+<h2><span class="badge bg-primary mb-1">Lista de Alunos</span></h2>
 
 <ul class="list-group list-group-flush">
     {% for aluno in alunos %}
     <li class="list-group-item">
-      {% if aluno.avatar %}
-      <img src="{{ aluno.avatar.url }}" alt="" width="60">
+      {% if aluno.avatarAluno %}
+      <img src="{{ aluno.avatarAluno.url }}" alt="" width="60">
       {% else %}
       <img src="https://cdn.pixabay.com/photo/2016/09/01/08/24/smiley-1635449_1280.png" alt="" width="60">
       {% endif %}      

@@ -1,7 +1,22 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Pagina Inicial do Site{% endblock %}
-{% block content %}
+{% block title %} Detalhar Professor {% endblock %}
+{% block conteudo %}
+{% load bootstrap5 %}
 
 
-{% endblock %}
+<h2><span class="badge bg-primary mb-1">Detalhar Professor</span></h2>
+
+{% if professor.avatarProfessor %}
+<img src="{{ aluno.avatarProfessor.url }}" alt="" width="100">
+{% else %}
+<img src="https://cdn.pixabay.com/photo/2016/09/01/08/24/smiley-1635449_1280.png" alt="" width="100">
+{% endif %}
+<h1>Matricula: {{ professor.matriculaProfessor }}</h1>
+<h1>Aluno: {{ professor.nomeProfessor }}</h1>
+
+<a class="btn btn-primary" href="{% url 'atualizar-professor' professor.id %}">Atualizar Professor</a>
+<a class="btn btn-danger" href="{% url 'deletar-professor' professor.id %}">Apagar Professor</a>
+
+{% endblock conteudo %}
+

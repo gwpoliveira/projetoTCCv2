@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Projeto TCC Listar Aluno {% endblock %}
+{% block title %}Atualizar Aluno {% endblock %}
 {% block conteudo %}
 {% load bootstrap5 %}
 {% bootstrap_messages %}
+
+<h2><span class="badge bg-primary mb-1">Atualizar Aluno</span></h2>
 
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}

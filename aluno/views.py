@@ -14,7 +14,6 @@ class HomeTemplateView(TemplateView):
         
         context = super().get_context_data(**kwargs)
         context['aluno'] = Aluno.objects.all()[:5]
-        
         return context
 
 class AlunoListView(ListView):

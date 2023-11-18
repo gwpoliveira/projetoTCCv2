@@ -3,7 +3,7 @@
 from django.db import models
 class Curso(models.Model):
     
-    curso = models.CharField('Curso:', max_length=100, blank=False)
+    curso = models.CharField('Nome do Curso:', max_length=100, blank=False)
     
 # Create your models here.
     def __str__(self):

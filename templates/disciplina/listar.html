@@ -1,7 +1,22 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Pagina Inicial do Site{% endblock %}
-{% block content %}
+{% block title %} Listar Disciplina {% endblock %}
+{% block conteudo %}
+{% load bootstrap5 %}
+{% bootstrap_messages %}
 
+<h2><span class="badge bg-primary mb-1">Listar Disciplina</span></h2>
 
-{% endblock %}
+<ul class="list-group list-group-flush">
+    {% for disciplina in disciplinas %}
+    <li class="list-group-item">
+           
+      <a href="{% url 'detalhar-disciplina' disciplina.id %}">{{disciplina.id}} {{disciplina.disciplina}}</a></li>
+    {% endfor %}
+  </ul>
+
+  {% if perms.disciplina.add_disciplina %}
+  <a class="btn btn-primary" href="{% url 'cadastrar-disciplina' %}" role="button">Cadastrar Disiciplina</a>
+  {% endif %}
+
+{% endblock conteudo %}

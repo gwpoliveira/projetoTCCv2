@@ -1,7 +1,17 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Pagina Inicial do Site{% endblock %}
-{% block content %}
+{% block title %} Detalhar Disciplina {% endblock %}
+{% block conteudo %}
+{% load bootstrap5 %}
 
 
-{% endblock %}
+<h2><span class="badge bg-primary mb-1">Detalhar Disciplina</span></h2>
+
+<h1>Periodo: {{ disciplina.periodo }}</h1>
+<h1>Disciplina: {{ disciplina.disciplina }}</h1>
+
+<a class="btn btn-primary" href="{% url 'atualizar-disciplina' disciplina.id %}">Atualizar Disciplina</a>
+<a class="btn btn-danger" href="{% url 'deletar-disciplina' disciplina.id %}">Apagar Disciplina</a>
+
+{% endblock conteudo %}
+

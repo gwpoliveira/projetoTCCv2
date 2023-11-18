@@ -5,5 +5,5 @@ from .models import Aluno
 
 @admin.register(Aluno)
 class AlunoAdmin(admin.ModelAdmin):
-    list_display = ['avatarAluno','matriculaAluno', 'nomeAluno', 'curso', 'disciplina']
+    list_display = ['matriculaAluno', 'nomeAluno', 'curso', 'disciplina']
     search_fields = ['matriculaAluno', 'nomeAluno']

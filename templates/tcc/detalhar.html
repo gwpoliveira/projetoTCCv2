@@ -1,7 +1,16 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Pagina Inicial do Site{% endblock %}
-{% block content %}
+{% block title %} Detalhar Banca de Tcc {% endblock %}
+{% block conteudo %}
+{% load bootstrap5 %}
 
 
-{% endblock %}
+<h2><span class="badge bg-primary mb-1">Detalhar Banca de Tcc</span></h2>
+
+<h1>Aluno: {{tcc.nomeAluno }}</h1>
+
+<a class="btn btn-primary" href="{% url 'atualizar-tcc' tcc.id %}">Atualizar Tcc</a>
+<a class="btn btn-danger" href="{% url 'deletar-tcc' tcc.id %}">Apagar Tcc</a>
+
+{% endblock conteudo %}
+

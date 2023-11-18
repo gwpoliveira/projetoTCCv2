@@ -1,7 +1,22 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Pagina Inicial do Site{% endblock %}
-{% block content %}
+{% block title %} Listar Tcc {% endblock %}
+{% block conteudo %}
+{% load bootstrap5 %}
+{% bootstrap_messages %}
 
+<h2><span class="badge bg-primary mb-1">Listar Tcc</span></h2>
 
-{% endblock %}
+<ul class="list-group list-group-flush">
+    {% for tcc in tccs %}
+    <li class="list-group-item">
+           
+      <a href="{% url 'detalhar-tcc' tcc.id %}">{{tcc.nomeAluno}}</a></li>
+    {% endfor %}
+  </ul>
+
+  {% if perms.tcc.add_tcc %}
+  <a class="btn btn-primary" href="{% url 'cadastrar-tcc' %}" role="button">Cadastrar Tcc</a>
+  {% endif %}
+
+{% endblock conteudo %}

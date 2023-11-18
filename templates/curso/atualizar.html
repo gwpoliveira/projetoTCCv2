@@ -1,7 +1,17 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Pagina Inicial do Site{% endblock %}
-{% block content %}
+{% block title %}Atualizar Curso {% endblock %}
+{% block conteudo %}
+{% load bootstrap5 %}
+{% bootstrap_messages %}
+
+<h2><span class="badge bg-primary mb-1">Atualizar Curso</span></h2>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <button class="btn btn-primary" type="submit">Atualizar</button>
+</form>
 
 
 {% endblock %}
