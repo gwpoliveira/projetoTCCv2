@@ -41,7 +41,7 @@ class AlunoUpdateView(UpdateView):
     model = Aluno
     template_name = 'aluno/atualizar.html'
     form_class = AlunoForm
-    id_url_kwarg = 'id'
+    pk_url_kwarg = 'id'
     
     def get_success_url(self):
         messages.add_message(self.request, messages.SUCCESS, "Aluno atualizado com sucesso!")

@@ -8,8 +8,8 @@ from professor.models import Professor
 class Tcc(models.Model):
     periodo = models.ForeignKey(Periodo, verbose_name="Periodo", on_delete=models.CASCADE, blank=False)
     disciplina = models.ForeignKey(Disciplina, verbose_name="Disciplina", on_delete=models.CASCADE, blank=False)
-    nomeAluno = models.ForeignKey(Aluno , related_name='nomeAluno_tcc_set',verbose_name="Aluno:",on_delete=models.CASCADE, blank=False, null=True)
-    tituloTCC = models.ForeignKey(Aluno ,related_name='tituloTCC_tcc_set',verbose_name="Titulo do TCC:",on_delete=models.CASCADE, blank=False, null=True)
+    nomeAluno = models.ForeignKey(Aluno, related_name='nomeAluno_tcc_set',verbose_name="Aluno:",on_delete=models.CASCADE, blank=False, null=True)
+    tituloTCC = models.ForeignKey(Aluno, related_name='tituloTCC_tcc_set',verbose_name="Titulo do TCC:",on_delete=models.CASCADE, blank=False, null=True)
     orientador = models.ForeignKey(Professor, related_name='orientador_tcc_set',verbose_name='Orientador:', on_delete=models.CASCADE, blank=False)
     membro01 = models.ForeignKey(Professor, related_name='membro01_tcc_set',verbose_name='Presidente da Banca:', on_delete=models.CASCADE, blank=False)
     membro02 = models.ForeignKey(Professor, related_name='membro02_tcc_set',verbose_name='Membro 01:', on_delete=models.CASCADE, blank=True)

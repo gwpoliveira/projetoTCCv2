@@ -3,18 +3,7 @@ from django.urls import reverse
 from .models import Professor
 from .forms import ProfessorForm
 from django.contrib import messages
-from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
-
-# Create your views here.
-# class HomeTemplateView(TemplateView):
-#     template_name = 'home.html'
-    
-#     def get_context_data(self, **kwargs):
-        
-#         context = super().get_context_data(**kwargs)
-#         context['professor'] = Professor.objects.all()[:5]
-        
-#         return context
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 class ProfessorListView(ListView):
     model = Professor

@@ -10,7 +10,7 @@ from django.views.generic import TemplateView, ListView, DetailView, CreateView,
 class DisciplinaListView(ListView):
     model = Disciplina
     template_name = 'disciplina/listar.html'
-    context_object_name = 'disciplina'
+    context_object_name = 'disciplinas'
     ordering = '-disciplina'
 
 class DisciplinaDetailView(DetailView):
