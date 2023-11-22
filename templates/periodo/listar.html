@@ -8,15 +8,12 @@
 <h2><span class="badge bg-primary mb-1">Listar Periodo</span></h2>
 
 <ul class="list-group list-group-flush">
-    {% for aluno in alunos %}
-    <li class="list-group-item">
-           
-      <a href="{% url 'detalhar-periodo' periodo.id %}">{{periodo.periodo}}</a></li>
+    {% for periodo in periodos %}
+    <li class="list-group-item">           
+      <a href="{% url 'detalhar-periodo' periodo.id %}">{{periodo.id}} --- {{periodo.periodo}}</a></li>
     {% endfor %}
-  </ul>
+</ul>
 
-  {% if perms.periodo.add_periodo %}
-  <a class="btn btn-primary" href="{% url 'cadastrar-periodo' %}" role="button">Cadastrar Periodo</a>
-  {% endif %}
+<a class="btn btn-primary" href="{% url 'cadastrar-periodo' %}" role="button">Cadastrar Periodo</a>
 
 {% endblock conteudo %}

@@ -5,20 +5,11 @@ from .forms import DisciplinaForm
 from django.contrib import messages
 from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
 
-# Create your views here.
-# class HomeTemplateView(TemplateView):
-#     template_name = 'home.html'
-    
-#     def get_context_data(self, **kwargs):
-        
-#         context = super().get_context_data(**kwargs)
-#         context['disciplina'] = Disciplina.objects.all()[:5]
-        
-#         return context
+
 
 class DisciplinaListView(ListView):
     model = Disciplina
-    template_name = 'curso/listar.html'
+    template_name = 'disciplina/listar.html'
     context_object_name = 'disciplina'
     ordering = '-disciplina'
 

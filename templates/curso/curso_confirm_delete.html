@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}Confirmação de deletar{% endblock %}
-{% block content %}
+{% block conteudo %}
 
 <form method="post">{% csrf_token %}
     <p>Tem certeza de que deseja apagar o Curso selecionado? "{{ object }}"?</p>
@@ -9,4 +9,4 @@
     <input type="submit" value="Confirmar">
 </form>
 
-{% endblock %}
+{% endblock conteudo %}

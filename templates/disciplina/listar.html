@@ -10,13 +10,14 @@
 <ul class="list-group list-group-flush">
     {% for disciplina in disciplinas %}
     <li class="list-group-item">
-           
-      <a href="{% url 'detalhar-disciplina' disciplina.id %}">{{disciplina.id}} {{disciplina.disciplina}}</a></li>
-    {% endfor %}
+
+      <a href="{% url 'detalhar-disciplina' disciplina.id %}">{{disciplina.periodo}} {{disciplina.disciplina}}</a></li>
+    
+      {% endfor %}
   </ul>
 
-  {% if perms.disciplina.add_disciplina %}
+  
   <a class="btn btn-primary" href="{% url 'cadastrar-disciplina' %}" role="button">Cadastrar Disiciplina</a>
-  {% endif %}
+  
 
 {% endblock conteudo %}
