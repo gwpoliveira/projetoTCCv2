@@ -10,6 +10,19 @@ class TccListView(ListView):
     template_name = 'tcc/listar.html'
     context_object_name = 'tccs'
     ordering = '-id'
+    
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        pesquisa = self.request.GET.get('pesquisa')
+
+        # Se o botão de limpar pesquisa foi clicado, ignore o parâmetro de pesquisa
+        if 'limpar_pesquisa' in self.request.GET:
+            pesquisa = ''
+
+        if pesquisa:
+            queryset = queryset.filter(tcc__icontains=pesquisa)
+
+        return queryset
 
 class TccDetailView(DetailView):
     model = Tcc

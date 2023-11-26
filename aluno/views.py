@@ -22,6 +22,19 @@ class AlunoListView(ListView):
     context_object_name = 'alunos'
     ordering = '-nomeAluno'
 
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        pesquisa = self.request.GET.get('pesquisa')
+
+        # Se o botão de limpar pesquisa foi clicado, ignore o parâmetro de pesquisa
+        if 'limpar_pesquisa' in self.request.GET:
+            pesquisa = ''
+
+        if pesquisa:
+            queryset = queryset.filter(nomeAluno__icontains=pesquisa)
+
+        return queryset
+
 class AlunoDetailView(DetailView):
     model = Aluno
     template_name = 'aluno/detalhar.html'

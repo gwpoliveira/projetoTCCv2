@@ -12,6 +12,19 @@ class DisciplinaListView(ListView):
     template_name = 'disciplina/listar.html'
     context_object_name = 'disciplinas'
     ordering = '-disciplina'
+    
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        pesquisa = self.request.GET.get('pesquisa')
+
+        # Se o botão de limpar pesquisa foi clicado, ignore o parâmetro de pesquisa
+        if 'limpar_pesquisa' in self.request.GET:
+            pesquisa = ''
+
+        if pesquisa:
+            queryset = queryset.filter(disciplina__icontains=pesquisa)
+
+        return queryset
 
 class DisciplinaDetailView(DetailView):
     model = Disciplina

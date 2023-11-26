@@ -11,6 +11,19 @@ class PeriodoListView(ListView):
     template_name = 'periodo/listar.html'
     context_object_name = 'periodos'
     ordering = '-periodo'
+    
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        pesquisa = self.request.GET.get('pesquisa')
+
+        # Se o botão de limpar pesquisa foi clicado, ignore o parâmetro de pesquisa
+        if 'limpar_pesquisa' in self.request.GET:
+            pesquisa = ''
+
+        if pesquisa:
+            queryset = queryset.filter(periodo__icontains=pesquisa)
+
+        return queryset
 
 class PeriodoDetailView(DetailView):
     model = Periodo
