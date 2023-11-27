@@ -5,5 +5,5 @@ from .models import Tcc
 
 @admin.register(Tcc)
 class TccAdmin(admin.ModelAdmin):
-    list_display = ["periodo", 'disciplina', 'nomeAluno','tituloTCC','orientador', 'membro01', 'membro02', 'membro03']
+    list_display = ["periodo", 'disciplina', 'nomeAluno','orientador', 'membro01', 'membro02', 'membro03']
     search_fields = ["nomeAluno", 'orientador']

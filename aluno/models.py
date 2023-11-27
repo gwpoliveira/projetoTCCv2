@@ -19,4 +19,4 @@ class Aluno(models.Model):
     
 
     def __str__(self):
-        return f'{self.matriculaAluno} {self.nomeAluno}'
+        return f'{self.matriculaAluno} {self.nomeAluno} {self.tituloTCC}'
